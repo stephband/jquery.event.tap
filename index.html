@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="" />
+	<meta name="description" content="" />
+	
+	<title>Template</title>
+	
+	<script>document.documentElement.className = 'js';</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<!-- Force latest IE rendering engine & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	
+	<link rel="stylesheet" href="../template/css/template.reset.css" />
+	<link rel="stylesheet" href="../template/css/template.typography.css" />
+	<link rel="stylesheet" href="../template/css/template.typography.15_24.css" />
+	<style>
+		p {
+			font-size: 24px;
+			font-family: Helvetica, Arial, sans-serif;
+			color: #bb7700;
+			background: orange;
+		}
+		span {
+			background: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<p>
+		<label for="input1">Checkbox label</label><br/>
+		<input type="checkbox" id="input1" /><br/>
+		<input type="radio" name="radio" id="radio1" /><input type="radio" name="radio" id="radio2" /><br/>
+		<label for="radio3">Radio label
+			<input type="radio" name="radio3" id="radio3" />
+		</label>
+		<label for="radio4">Radio label
+			<input type="radio" name="radio3" id="radio4" />
+		</label>
+		<br/>
+		<input type="text" id="text1" /><br/>
+		<label for="text1">Text label</label><br/>
+		<select>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+		<br/>
+		<input type="time" id="time" /><br/>
+		<input type="date" id="date" /><br/>
+		<input type="datetime" id="datetime" /><br/>
+		<a href="#hello">hash</a><br/>
+		<a href="index.html">relative url</a><br/>
+		<a href="http://10.0.1.21/jquery.event.tap/index.html">absolute url</a>
+	</p>
+	
+	<!-- Make the page scroll -->
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	Hello
+	
+	
+	<!--script src="http://code.jquery.com/jquery-1.7.1.min.js"></script-->
+	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery.js"%3E%3C/script%3E'));</script>
+	<script src="js/jquery.event.tap.js"></script>
+	
+	<!-- debug -->
+	<script>
+	jQuery(document)
+	.on('touchstart', function(e) {
+		console.log('[document] touchstart', e);
+	})
+	.on('touchmove', function(e) {
+		console.log('[document] touchmove', e);
+	})
+	.on('touchend', function(e) {
+		console.log('[document] touchend', e);
+		//e.preventDefault();
+	})
+	.on('mousedown', function(e){
+	  console.log('[document] mousedown', e);
+	})
+	.on('mouseup', function(e){
+	  console.log('[document] mouseup', e);
+	})
+	.on('click', function(e){
+	  console.log('[document] click', e);
+	})
+	.on('tap', function(e){
+	  console.log('[document] tap', e);
+	})
+	.on('change', function(e){
+	  console.log('[document] change', e);
+	})
+	.on('focusin', function(e){
+		console.log('[document] focusin', e);
+		//e.target.setSelectionRange(0, 9999);
+	});
+	
+	
+	
+	document.write(unescape('%3Cscript src="http://'+window.location.hostname+':8081/target/target-script-min.js"%3E%3C/script%3E'));
+	</script>
+</body>
+</html>
