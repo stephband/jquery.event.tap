@@ -38,7 +38,7 @@
 
 
 (function(jQuery, undefined){
-	var debug = true;
+	var debug = false;
 	
 	var duration = 480,
 	    amputateFlag = true,
@@ -69,17 +69,11 @@
 	
 	function touchstart(e) {
 		if (!e.changedTouches) {
-			console.log('This event object has no changedTouches array.', e);
+			if (debug) { console.log('This event object has no changedTouches array.', e); }
 			return;
 		}
 		
-		//if (e.target.tagName.toLowerCase() === 'input') {
-		//	e.target.checked
-		//}
-		
 		jQuery.each(e.changedTouches, function(i, startTouch) {
-			console.log(startTouch.identifier);
-			
 			cache[startTouch.identifier] = {
 				target: e.target,
 				clientX: startTouch.clientX,
@@ -95,8 +89,6 @@
 	function touchend(e) {
 		jQuery.each(e.changedTouches, function(i, endTouch) {
 			var startTouch = cache[endTouch.identifier];
-			
-			console.log(endTouch.identifier);
 			
 			delete cache[endTouch.identifier];
 			
@@ -114,7 +106,7 @@
 				jQuery(e.target).trigger({ type: 'tap', startData: startTouch });
 				
 				// Stop simulated mouse events in iOS, except for elements that
-				// require it.
+				// require it to focus.
 				if (e.target.tagName.toLowerCase() !== 'select') {
 					e.preventDefault();
 				}
@@ -138,7 +130,7 @@
 		},
 		
 		input: function(target) {
-			console.log('input type="'+target.type+'"');
+			if (debug) { console.log('input type="'+target.type+'"'); }
 			
 			// Won't work in iOS, but does elsewhere.
 			target.focus();
@@ -178,11 +170,6 @@
 
 	jQuery.event.special.tap = {
 		_default: function(e) {
-			console.log('[default] tap');
-			
-			// Speed up default actions in touch interfaces by bypassing
-			// mouse event simulation.
-			
 			var target = jQuery(e.target).closest('a, label, input, select');
 			
 			// Ignore if the tap is not on an interactive element
